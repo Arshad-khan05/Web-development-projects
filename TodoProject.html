@@ -71,7 +71,6 @@
         crossorigin="anonymous"></script>
         <script>
             function getAndUpdate(){
-                console.log("Updating List...");
                 tit = document.getElementById('title').value;
                 desc = document.getElementById('description').value;
                 if (localStorage.getItem('itemsJson')==null){
@@ -114,7 +113,6 @@
             add.addEventListener("click", getAndUpdate);
             update();
             function deleted(itemIndex){
-                console.log("Delete", itemIndex);
                 itemJsonArrayStr = localStorage.getItem('itemsJson')
                 itemJsonArray = JSON.parse(itemJsonArrayStr);
                 itemJsonArray.splice(itemIndex, 1);
@@ -124,7 +122,6 @@
             }
             function clearStorage(){
                 if (confirm("Do you areally want to clear?")){
-                console.log('Clearing the storage')
                 localStorage.clear();
                 update()
                 }
